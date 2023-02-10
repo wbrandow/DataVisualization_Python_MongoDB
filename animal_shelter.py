@@ -1,3 +1,6 @@
+# Author: William Brandow
+# Date: 2023-02-10
+
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
