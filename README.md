@@ -16,6 +16,7 @@ Several Python libraries are imported by this project including:
   - Numpy
   - Plotly
   - Jupyter_plotly_dash
+  
 All of these libraries can be installed using pip install <library>.
 
 This project also utilizes MongoDB.  Most of the development was done using the server version of MongoDB in a virtual environment.  However, this software also runs successfully on the cloud utilizing MongoDB Atlas simply by modifying the MongoClient connection url in animal_shelter.py and passing the appropriate authentication.
