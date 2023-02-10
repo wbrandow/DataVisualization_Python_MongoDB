@@ -1,3 +1,6 @@
+# Author: William Brandow
+# Date: 2023-02-09
+
 from jupyter_plotly_dash import JupyterDash
 
 import dash
