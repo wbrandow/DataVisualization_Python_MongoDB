@@ -20,8 +20,8 @@ from animal_shelter import AnimalShelter
 # Data Manipulation / Model
 ###########################
 
-username = 'aacuser'
-password = '96724_Two!'
+username = 'username'
+password = 'password'
 shelter = AnimalShelter(username, password)
 
 # class read method must support return of cursor object and accept projection json input
