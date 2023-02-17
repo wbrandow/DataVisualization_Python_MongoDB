@@ -19,10 +19,10 @@ Several Python libraries are imported by this project including:
   
 All of these libraries can be installed using pip install [library].
 
-This project also utilizes MongoDB.  Most of the development was done using the server version of MongoDB in a virtual environment.  However, this software also runs successfully on the cloud utilizing MongoDB Atlas simply by modifying the MongoClient connection url in animal_shelter.py and passing the appropriate authentication.
+This project also utilizes MongoDB.  Most of the development was done using the server version of MongoDB in a virtual environment.  However, this software also runs successfully on the cloud utilizing MongoDB Atlas simply by modifying the MongoClient connection url in animal_shelter.py and passing the appropriate authentication.  I have not provided the dataset that was used for this project.  However, this project could be easily adapted for a wide variety of datasets.  I imported the data to MongoDB as a CSV file.
 
 # Lessons Learned
 I am learning a ton of valuable information through this project.  I now have the experience to write queries, create indexes, manage users, import data, and more in MongoDB.  These skills should be easy to learn for other noSQL and relational databases.  This was my first experience using Dash to create an interactive data visualization dashboard.  I can imagine Dash being a powerful tool for future projects to quickly create client-side dashboards.
 
 # Future Development
-This is very much an active project at the time of this writing.  I would like to prompt the user for their username and password rather than hardcoding the authentication. 
+This is very much an active project at the time of this writing.  I would like to prompt the user for their username and password rather than hardcoding the authentication. I also think it would be a good idea to allow the client to refresh the data feed to capture any new changes in the database without having to refresh the entire page.
