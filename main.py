@@ -1,5 +1,5 @@
 # Author: William Brandow
-# Date: 2023-02-17
+# Date: 2023-02-21
 
 from jupyter_plotly_dash import JupyterDash
 
@@ -24,8 +24,8 @@ from animal_shelter import AnimalShelter
 # Data Manipulation / Model
 ###########################
 
-username = 'username'
-password = 'password'
+username = 'aacuser'
+password = '96724_Two!'
 shelter = AnimalShelter(username, password)
 
 
@@ -48,7 +48,7 @@ app.layout = html.Div([
     html.Center(html.B(html.H1('SNHU CS-340 Dashboard'))),
     html.Img(
         src='data:image/png;base64,{}'.format(encoded_image.decode()), 
-        style={'width': '40%', 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto'}
+        style={'width': '20%', 'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto'}
     ),
     html.Center(html.B(html.H3('William Brandow'))),
     html.Hr(),
@@ -112,16 +112,14 @@ def update_data_table(rescue_type):
         query_result_df = pd.DataFrame.from_records(shelter.read({
             '$and':[
                 # age must be greater than 26 AND less than 156 weeks
-                {'$and':[
-                    {'age_upon_outcome_in_weeks': {'$gte': 26}}, 
-                    {'age_upon_outcome_in_weeks': {'$lte': 156}}
-                ]},
+                {'age_upon_outcome_in_weeks': {'$gte': 26}}, 
+                {'age_upon_outcome_in_weeks': {'$lte': 156}},
                 # must be one of the preferred breeds
-                {'$or':[
-                    {'breed': 'Labrador Retriever Mix'}, 
-                    {'breed': 'Chesapeake Bay Retriever'}, 
-                    {'breed': 'Newfoundland'}
-                ]},
+                {'breed': {'$in': [
+                    'Labrador Retriever Mix', 
+                    'Chesapeake Bay Retriever', 
+                    'Newfoundland'
+                ]}},
                 # must be preferred sex
                 {'sex_upon_outcome': 'Intact Female'}
             ]
@@ -131,18 +129,16 @@ def update_data_table(rescue_type):
         query_result_df = pd.DataFrame.from_records(shelter.read({
             '$and':[
                 # age must be greater than 26 AND less than 156 weeks
-                {'$and':[
-                    {'age_upon_outcome_in_weeks': {'$gte': 26}}, 
-                    {'age_upon_outcome_in_weeks': {'$lte': 156}}
-                ]},
+                {'age_upon_outcome_in_weeks': {'$gte': 26}}, 
+                {'age_upon_outcome_in_weeks': {'$lte': 156}},
                 # must be one of the preferred breeds
-                {'$or':[
-                    {'breed': 'German Shepherd'}, 
-                    {'breed': 'Alaskan Malamute'}, 
-                    {'breed': 'Old English Sheepdog'},
-                    {'breed': 'Siberian Husky'},
-                    {'breed': 'Rottweiler'}
-                ]},
+                {'breed': {'$in': [
+                    'German Shepherd', 
+                    'Alaskan Malamute', 
+                    'Old English Sheepdog',
+                    'Siberian Husky',
+                    'Rottweiler'
+                ]}},
                 # must be preferred sex
                 {'sex_upon_outcome': 'Intact Male'}
             ]
@@ -152,18 +148,16 @@ def update_data_table(rescue_type):
         query_result_df = pd.DataFrame.from_records(shelter.read({
             '$and':[
                 # age must be greater than 20 AND less than 300 weeks
-                {'$and':[
-                    {'age_upon_outcome_in_weeks': {'$gte': 20}}, 
-                    {'age_upon_outcome_in_weeks': {'$lte': 300}}
-                ]},
+                {'age_upon_outcome_in_weeks': {'$gte': 20}}, 
+                {'age_upon_outcome_in_weeks': {'$lte': 300}},
                 # must be one of the preferred breeds
-                {'$or':[
-                    {'breed': 'German Shepherd'}, 
-                    {'breed': 'Doberman Pinscher'}, 
-                    {'breed': 'Golden Retriever'},
-                    {'breed': 'Bloodhound'},
-                    {'breed': 'Rottweiler'}
-                ]},
+                {'breed': {'$in':[
+                    'German Shepherd', 
+                    'Doberman Pinscher', 
+                    'Golden Retriever',
+                    'Bloodhound',
+                    'Rottweiler'
+                ]}},
                 # must be preferred sex
                 {'sex_upon_outcome': 'Intact Male'}
             ]
